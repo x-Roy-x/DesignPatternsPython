@@ -68,9 +68,4 @@ if __name__ == '__main__':
     raster_renderer = RasterRenderer()
 
     triangle = Triangle(vector_renderer)
-
-    a = str(triangle)
-
-    print(a)
-
-
+    print(triangle)
