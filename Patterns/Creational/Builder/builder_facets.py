@@ -15,7 +15,7 @@ class Person:
                 f"Employed at {self.company_name} as a {self.position} earning {self.annual_income}"
 
 
-class PersonBuilder:  # facade
+class PersonBuilder:  # facade.py
 
     def __init__(self, person=None):
         if person is None:
