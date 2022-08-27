@@ -10,6 +10,9 @@ class CombinationLock:
         self._state = Lock(self)
         self._state.lock()
 
+    def change_state(self, state):
+        self._state = state
+
     def reset(self):
         self._state.lock()
 
@@ -44,6 +47,7 @@ class Lock(State):
 
         if current_combination == right_combination:
             self.locker.status = "OPEN"
+            self.locker.change_state(Unlock(self.locker))
         elif right_combination.startswith(current_combination):
             self.locker.status = current_combination
         else:
